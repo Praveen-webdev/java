@@ -1,3 +1,5 @@
+package problems;
+
 public class SumDigits {
     public static void main(String[] args) {
         System.out.println(sumDigits(102));

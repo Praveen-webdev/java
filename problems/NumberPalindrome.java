@@ -1,3 +1,5 @@
+package problems;
+
 public class NumberPalindrome {
     public static void main(String[] args) {
         System.out.println(isPalindrome(1441));

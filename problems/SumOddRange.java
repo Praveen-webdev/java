@@ -1,3 +1,5 @@
+package problems;
+
 public class SumOddRange {
     public static void main(String[] args) {
         System.out.println(sumOdd(1, 5));
