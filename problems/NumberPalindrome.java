@@ -1,4 +1,3 @@
-package problems;
 
 public class NumberPalindrome {
     public static void main(String[] args) {

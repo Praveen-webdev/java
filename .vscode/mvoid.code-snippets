@@ -1,10 +1,4 @@
 {
-  "System.out.print()": {
-    "scope": "java",
-    "prefix": "syspri",
-    "body": ["System.out.print(${1:string});"],
-    "description": "System out print"
-  }
   // Place your java workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
   // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
   // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
@@ -21,4 +15,10 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  "Void method": {
+    "scope": "java",
+    "prefix": "void method",
+    "body": "private static void $1(){$2}",
+    "description": "Create void method"
+  }
 }

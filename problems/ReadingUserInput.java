@@ -1,5 +1,4 @@
 
-package problems;
 import java.util.Scanner;
 
 public class ReadingUserInput {
