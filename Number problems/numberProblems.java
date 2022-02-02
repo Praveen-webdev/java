@@ -1,6 +1,6 @@
 public class numberProblems {
     public static void main(String[] args) {
-        System.out.println(isKrishnamoorthiNumber(145));
+        System.out.println(isAutoMorphic(25));
     }
 
     static int sumDigits(int number) {

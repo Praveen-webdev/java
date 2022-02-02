@@ -1,32 +1,31 @@
 
 public class numPatterns {
     public static void main(String[] args) {
-        hollowDiamond(9);
+        // hollowDiamond(9);
+        crossNumber(6);
 
     }
 
     private static void pattern43(int n) {
         n = n / 2 + 1;
-        for (int i = 1, k = n; i <= n; i++, k--) {
+        for (int i = 1, k = n; i < n; i++, k--) {
             int p = k;
-            for (int j = 1; j <= i; j++) {
+            for (int j = 1; j < i; j++) {
                 System.out.print(p++);
             }
-            p -= 2;
-            for (int j = 1; j < i; j++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(p--);
             }
             System.out.println();
 
         }
-        for (int i = 2, k = 2; i <= n; i++, k++) {
+        for (int i = 1, k = 1; i <= n; i++, k++) {
             int p = k;
-            for (int j = i; j <= n; j++) {
+            for (int j = i; j < n; j++) {
                 System.out.print(p++);
             }
-            p--;
-            for (int j = i; j < n; j++) {
-                System.out.print(--p);
+            for (int j = i; j <= n; j++) {
+                System.out.print(p--);
             }
             System.out.println();
         }
@@ -117,18 +116,40 @@ public class numPatterns {
 
     }
 
+    private static void crossNumber(int n) {
+        for (int i = n, p = 1; i >= 1; i--, p++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == j) {
+                    System.out.print(i);
+                } else if (i + j == n + 1) {
+                    System.out.print(p);
+                } else {
+                    System.out.print("-");
+                }
+            }
+            System.out.println();
+        }
+        // 1----6
+        // -2--5-
+        // --34--
+        // --34--
+        // -2--5-
+        // 1----6
+
+    }
+
     private static void hollowDiamond(int n) {
         int space = n / 2;
         int star = 1;
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= space; j++) {
-                System.out.print(" ");
+                System.out.print("-");
             }
             for (int j = 1; j <= star; j++) {
                 if (j == 1 || j == star)
                     System.out.print("*");
                 else
-                    System.out.print(" ");
+                    System.out.print("-");
             }
             System.out.println();
             if (i < n / 2 + 1) {
@@ -138,16 +159,16 @@ public class numPatterns {
                 space++;
                 star -= 2;
             }
+            // ----*
+            // ---*-*
+            // --*---*
+            // -*-----*
+            // *-------*
+            // -*-----*
+            // --*---*
+            // ---*-*
+            // ----*
         }
-    //      *
-    //     * *
-    //    *   *
-    //   *     *
-    //  *       *
-    //   *     *
-    //    *   *
-    //     * *
-    //      *
-    }
 
+    }
 }

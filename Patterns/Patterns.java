@@ -3,10 +3,10 @@ public class Patterns {
     public static void main(String[] args) {
         // sandGlass(13);
         // pyramid(6);
-        //diamond(9);
+        // diamond(9);
         // numPyramid(5);
         // pascal(13);
-        butterfly(6);
+        butterfly(11);
     }
 
     private static void increasingTriangle(int n) {
@@ -158,40 +158,64 @@ public class Patterns {
     }
 
     private static void butterfly(int n) {
-        // * 8utterfly
+        // // * 8utterfly
+        // for (int i = 1; i <= n; i++) {
+
+        // for (int j = 1; j <= (j == n ? i - 1 : i); j++) {//decrease in column by 1
+        // System.out.print("* ");
+        // }
+        // for (int j = 1; j <= (n - i - 1); j++) {
+        // System.out.print("- ");
+        // }
+        // for (int j = i; j < n; j++) {
+        // System.out.print("- ");
+        // }
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print("* ");
+        // }
+        // System.out.println();
+        // }
+        // for (int i = 2; i <= n; i++) { // ! will skip the first row
+        // for (int j = i; j <= n; j++) {
+        // System.out.print("* ");
+        // }
+        // for (int j = 1; j < i - 1; j++) {
+        // System.out.print("- ");
+        // }
+        // for (int k = 1; k < i; k++) {
+        // System.out.print("- ");
+        // }
+        // for (int k = i; k <= n; k++) {
+        // System.out.print("* ");
+        // }
+        // System.out.println();
+        // }
+        // * Simplified butterfly
+        int stars = 1;
+        int spaces = n - 2;
         for (int i = 1; i <= n; i++) {
-
-            for (int j = 1; j <= (j == n ? i - 1 : i); j++) {//decrease in column by 1
-                System.out.print("* ");
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
             }
-            for (int j = 1; j <= (n - i - 1); j++) {
-                System.out.print("- ");
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
             }
-            for (int j = i; j < n; j++) {
-                System.out.print("- ");
-            }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
+            for (int j = 1; j <= (i == n / 2 + 1 ? stars - 1 : stars); j++) {
+                System.out.print("*");
             }
             System.out.println();
-        }
-        for (int i = 2; i <= n; i++) { // ! will skip the first row
-            for (int j = i; j <= n; j++) {
-                System.out.print("* ");
+            if (i < n / 2 + 1) {
+                stars++;
+                spaces -= 2;
+            } else {
+                stars--;
+                spaces += 2;
+
             }
-            for (int j = 1; j < i - 1; j++) {
-                System.out.print("- ");
-            }
-            for (int k = 1; k < i; k++) {
-                System.out.print("- ");
-            }
-            for (int k = i; k <= n; k++) {
-                System.out.print("* ");
-            }
-            System.out.println();
+
         }
 
-    }
+    };
 
     private static void numPyramid(int n) {
         for (int i = 1, k = 1; i <= n; i++, k++) {
@@ -199,11 +223,10 @@ public class Patterns {
             for (int j = i; j < n; j++) {
                 System.out.print("-  ");
             }
-            for (int j = 1; j <= i; j++) {
+            for (int j = 1; j < i; j++) {
                 System.out.print(p++ + "  ");
             }
-            p -= 2;
-            for (int j = 1; j < i; j++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(p-- + "  ");
             }
             System.out.println();
