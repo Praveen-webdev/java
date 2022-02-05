@@ -1,9 +1,11 @@
 package manage.employee;
 
 public class EmpoyeeReportFormatter extends ReportFormatter {
-    Employee anEmployee;
+    public EmpoyeeReportFormatter(Employee employee, ReportFormat format) {
+        super(employee, format);
+    }
 
-    public void getFormattedEmployee() {
-
+    public String getFormattedEmployee() {
+       return super.getFormattedValue();
     }
 }

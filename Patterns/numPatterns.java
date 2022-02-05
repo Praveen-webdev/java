@@ -2,8 +2,7 @@
 public class numPatterns {
     public static void main(String[] args) {
         // hollowDiamond(9);
-        crossNumber(6);
-
+        // lookAndSay(6);
     }
 
     private static void pattern43(int n) {
@@ -113,6 +112,15 @@ public class numPatterns {
 
             System.out.println();
         }
+        // 1 1 1 1 1 1 1 1 1
+        // 1 2 2 2 2 2 2 2 1
+        // 1 2 3 3 3 3 3 2 1
+        // 1 2 3 4 4 4 3 2 1
+        // 1 2 3 4 5 4 3 2 1
+        // 1 2 3 4 4 4 3 2 1
+        // 1 2 3 3 3 3 3 2 1
+        // 1 2 2 2 2 2 2 2 1
+        // 1 1 1 1 1 1 1 1 1
 
     }
 
@@ -169,6 +177,40 @@ public class numPatterns {
             // ---*-*
             // ----*
         }
+
+    }
+
+    private static void lookAndSay(int n) {
+        String finalString = "1";
+        System.out.println(1);
+        // !Pointers -characterpointer,countpointer
+        int character = 0;
+        int count = 0;
+        String stringInProgress = "";
+        while (n > 1) { // n-1
+            while (count < finalString.length()) {
+                while (finalString
+                        .charAt(character) == (count >= finalString.length() ? 0 : finalString.charAt(count))) {
+                    count++;
+                }
+                stringInProgress += (count - character);
+                stringInProgress += finalString.charAt(character);
+                character = count;
+            }
+            finalString = stringInProgress;
+            System.out.print(finalString);
+            stringInProgress = "";
+            character = 0;
+            count = 0;
+            n--;
+            System.out.println();
+        }
+        // 1
+        // 11
+        // 21
+        // 1211
+        // 111221
+        // 312211
 
     }
 }
