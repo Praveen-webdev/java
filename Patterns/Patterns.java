@@ -5,8 +5,8 @@ public class Patterns {
         // pyramid(6);
         // diamond(9);
         // numPyramid(5);
-        // pascal(13);
-        butterfly(11);
+        pascal(13);
+        // butterfly(11);
     }
 
     private static void increasingTriangle(int n) {
@@ -235,40 +235,74 @@ public class Patterns {
 
     private static void pascal(int n) {
         // !n must be an odd number
-        n = n / 2 + 1;
-        // *upper Portion
+        // n = n / 2 + 1;
+        // // *upper Portion
+        // for (int i = 1; i <= n; i++) {
+        // for (int j = i; j <= n; j++) {
+        // System.out.print("* ");
+        // }
+        // for (int j = 1; j < i; j++) {
+        // System.out.print("- ");
+        // }
+        // for (int j = 1; j < i; j++) {
+        // System.out.print("- ");
+        // }
+
+        // for (int j = i; j <= n; j++) {
+        // System.out.print("* ");
+        // }
+        // System.out.println();
+        // }
+        // for (int i = 2; i <= n; i++) {
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print("* ");
+        // }
+        // for (int j = i; j < n; j++) {
+        // System.out.print("- ");
+        // }
+        // for (int j = i; j < n; j++) {
+        // System.out.print("- ");
+        // }
+        // for (int j = 1; j <= i; j++) {
+        // System.out.print("* ");
+        // }
+
+        // System.out.println();
+        // }
+        int stars = n / 2 + 1;
+        int spaces = 0;
         for (int i = 1; i <= n; i++) {
-            for (int j = i; j <= n; j++) {
-                System.out.print("* ");
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
             }
-            for (int j = 1; j < i; j++) {
-                System.out.print("- ");
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print("-");
             }
-            for (int j = 1; j < i; j++) {
-                System.out.print("- ");
-            }
-
-            for (int j = i; j <= n; j++) {
-                System.out.print("* ");
+            for (int j = 1; j <= stars; j++) {
+                System.out.print("*");
             }
             System.out.println();
+            if (i < n / 2 + 1) {
+                stars--;
+                spaces += 2;
+            } else {
+                stars++;
+                spaces -= 2;
+            }
         }
-        for (int i = 2; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
-            }
-            for (int j = i; j < n; j++) {
-                System.out.print("- ");
-            }
-            for (int j = i; j < n; j++) {
-                System.out.print("- ");
-            }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
-            }
-
-            System.out.println();
-        }
+        // **************
+        // ******--******
+        // *****----*****
+        // ****------****
+        // ***--------***
+        // **----------**
+        // *------------*
+        // **----------**
+        // ***--------***
+        // ****------****
+        // *****----*****
+        // ******--******
+        // **************
     }
 
 }

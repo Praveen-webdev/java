@@ -1,0 +1,4 @@
+ Useful string methods are listed  :
+str.substring(int start(inclusive),int end(exclusive));
+str.indexOf(""); char or string return -1 if not matches
+str.startsWith("");

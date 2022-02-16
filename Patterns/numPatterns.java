@@ -180,6 +180,22 @@ public class numPatterns {
 
     }
 
+    private static void noSeq1(int n) {
+        for (int i = 1; i <= n; i++) {
+            int p = i;
+            for (int j = n; j >= i; j--) {
+                System.out.print(p + " ");
+                p += j;
+            }
+            System.out.println(" ");
+        }
+        // 1 6 10 13 15
+        // 2 7 11 14
+        // 3 8 12
+        // 4 9
+        // 5
+    }
+
     private static void lookAndSay(int n) {
         String finalString = "1";
         System.out.println(1);
