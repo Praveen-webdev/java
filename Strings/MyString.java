@@ -7,9 +7,54 @@ public class MyString { // ! naming as public class String will give error since
     // stringMethods();
     // tellMetype("hello", "12345", "money$");// return weather
     // vowel,consonant,number or symbol
-     System.out.println(stringPalindrome("123321")) ;
+    // System.out.println(stringPalindrome("123321")) ;
     // mutableString();
-    //System.out.println(last2("xaxxaxaxx"));
+    // System.out.println(last2("xaxxaxaxx"));
+     System.out.println(runLengthEncode("aaapppprrd")) ;
+  }
+  private static String runLengthEncode(String str){
+    char c=str.charAt(0);
+    int i=0,count=0;
+    StringBuffer sb=new StringBuffer();
+    while(i<=str.length()){
+        char current=i!=str.length()?str.charAt(i):'0'; //To print last character
+        if(current==c){
+            count++;
+        }else{
+            sb.append(c);
+            sb.append(count);
+            c=current;
+            count=1;
+        }
+        i++;
+    }
+    return sb.toString();
+  }
+  private static String runLengthDecode(String str){
+    int i=1,count=0;
+    char c=str.charAt(0);
+    StringBuffer sb=new StringBuffer(); 
+    while(i<=str.length()){
+      char current=i==str.length()?'d':str.charAt(i); //just to print last length
+      if(current>=48&&current<=57){
+        count=count*10+(int)current-48;
+      }else{
+        for(int k=1;k<=count;k++){
+          sb.append(c);
+        }
+        c=current;
+        count=0;
+      }
+      i++;
+    }
+    return sb.toString();
+  }
+  private static void allSubstring(String str) {
+    for (int i = 0; i < str.length(); i++) {
+      for (int j = i + 1; j <= str.length(); j++) { // * j=i+1
+        System.out.println(str.substring(i, j));
+      }
+    }
   }
 
   public static int last2(String str) {
@@ -97,15 +142,16 @@ public class MyString { // ! naming as public class String will give error since
   private static boolean stringPalindrome(String s) {
     s = s.toLowerCase();
     // * my way
-    for(int i=0;i<s.length();i++){
-      if(s.charAt(i)!=s.charAt(s.length()-i-1)){
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
         return false;
       }
     }
     return true;
     // * using stringbuffer
     // StringBuffer sb = new StringBuffer(s);
-    // String rev = sb.reverse().toString(); // ? StringBuffer return a stringbuffer object
+    // String rev = sb.reverse().toString(); // ? StringBuffer return a stringbuffer
+    // object
     // return (s.equals(rev));
     // return new StringBuffer(s).reverse().toString().equals(s);
   }

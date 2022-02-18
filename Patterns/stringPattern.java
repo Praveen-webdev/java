@@ -1,12 +1,31 @@
-import java.util.Scanner;
 
 class stringPattern {
     public static void main(String[] args) {
         // www.knowprogramming.com/c-programming/string-pattern-in-c-language/
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a string: ");
-        String string = sc.nextLine();
-        plusString(string);
+
+        crossString("geeks");
+
+    }
+
+    private static void crossString(String s) {
+        int n = s.length();
+        for (int i = 0, p = n - 1; i < n; i++, p--) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    System.out.print(s.charAt(i) + " ");
+                } else if (i + j == n - 1) {
+                    System.out.print(s.charAt(p) + " ");
+                } else {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println();
+        }
+        // g - - - s
+        // - e - k -
+        // - - e - -
+        // - e - k -
+        // g - - - s
 
     }
 
@@ -65,17 +84,22 @@ class stringPattern {
 
     private static void plusString(String s) {
         int n = s.length();
-        for (int i = 1, k = 0; i <= n; i++, k++) {
-            for (int j = 1, p = 0; j <= n; j++, p++) {
-                if (i == n / 2 + 1) {
-                    System.out.print(s.charAt(p) + " ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == n / 2) {
+                    System.out.print(s.charAt(j) + " ");
 
-                } else if (j == n / 2 + 1) {
-                    System.out.print(s.charAt(k) + " ");
+                } else if (j == n / 2) {
+                    System.out.print(s.charAt(i) + " ");
                 } else
                     System.out.print("- ");
             }
             System.out.println();
         }
+        // - - g - -
+        // - - e - -
+        // g e e k s
+        // - - k - -
+        // - - s - -
     }
 }
