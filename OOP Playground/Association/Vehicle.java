@@ -17,10 +17,10 @@ public class Vehicle {
 
 
    public  void accelarate(){
-        System.out.println("accelerating...");
+        System.out.println("accelerating... "+model);
     }
     void brake(){
-        System.out.println("applying brakes...");
+        System.out.println("applying brakes... for"+model);
     }
    public void turbo(){
         System.out.println( "Turning on turbo...");

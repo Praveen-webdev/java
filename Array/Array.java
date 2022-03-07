@@ -1,4 +1,5 @@
 package Array;
+
 public class Array {
     public static void main(String[] args) {
         // * Declaring array
@@ -13,6 +14,13 @@ public class Array {
         numbers[4] = 5;
         // * Declaring and assigning on the same line
         int array[] = { 1, 2, 3, 4, 5 }; // size will be automatically allocated
+        // int[][] num;
+        // num=new int[4][];
+        // num[0]=new int[4];
+        // num[1]=new int[3];
+        // num[2]=new int[2];
+        // num[3]=new int[1];
+        // System.out.println(Arrays.deepToString(num)); //* Non-rectangular array
         // ! Common mistakes with array
         // System.out.println(array); will give the memory address of that array
         // int[] array2=array; // It does not copy array instead of sharing the same
@@ -46,8 +54,10 @@ public class Array {
         original = expand; // !Dereferencing || giving expand address to orignal variable
         System.out.println(expand);
         System.out.println(original);
-        int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-        print2dArray(arr);
+        int[][] arr = { { 13, 21, 38 }, { 45, 53, 62 }, { 76, 83, 90 } };
+
+        // print2dArray(arr);
+        find(arr, 89);
     }
 
     private static void print2dArray(int[][] arr) {
@@ -57,5 +67,17 @@ public class Array {
             }
             System.out.println();
         }
+    }
+
+    private static void find(int[][] arr, int find) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == find) {
+                    System.out.println("Found at [" + i + "," + j + "]");
+                    return;
+                }
+            }
+        }
+        System.out.println("Not found");
     }
 }

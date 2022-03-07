@@ -3,9 +3,10 @@ public class numPatterns {
     public static void main(String[] args) {
         // hollowDiamond(9);
         // lookAndSay(6);
+        pattern4(5);
     }
 
-    private static void pattern43(int n) {
+    private static void pattern1(int n) {
         n = n / 2 + 1;
         for (int i = 1, k = n; i < n; i++, k--) {
             int p = k;
@@ -40,7 +41,7 @@ public class numPatterns {
 
     }
 
-    private static void pattern42(int n) {
+    private static void pattern2(int n) {
         for (int i = 1, k = n; i <= n; i++, k--) {
             int p = 1, d = k;
             for (int j = i; j <= n; j++) {
@@ -66,7 +67,7 @@ public class numPatterns {
         // 1 - - - - - - - - - 1
     }
 
-    private static void pattern21(int n) {
+    private static void pattern3(int n) {
         for (int i = 1, init = 2 * n - 1; i <= n; i++, init -= 2) {
             for (int j = 1, val = init; j <= i; j++, val += 2) {
                 System.out.print(val + " ");
@@ -228,5 +229,26 @@ public class numPatterns {
         // 111221
         // 312211
 
+    }
+
+    private static void pattern4(int n) {
+        int skel = n;
+        for (int i = 0; i < n; i++) {
+            int k = i;
+            for (int j = 0; j < skel; j++) {
+                if (j < n - i - 1) { // * Yay! gotcha
+                    System.out.print("- ");
+                } else {
+                    System.out.print(k + " ");
+                    if (j >= n - 1) { // ! >= ensures decreasing zero
+                        ++k;
+                    } else {
+                        k--;
+                    }
+                }
+            }
+            System.out.println();
+            skel++;
+        }
     }
 }

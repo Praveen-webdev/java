@@ -15,9 +15,12 @@ public class Driver {
 
     //* Driver depends on vehicle to drive ;
     //* Dependency association is formed in terms of the scope of the operation and not on the class
-    public void drive(Vehicle raceCar){
+     void drive(Vehicle raceCar){
         raceCar.accelarate();
         raceCar.turbo();
+    }
+    void stop(Vehicle raceCar){
+        raceCar.brake();
     }
 
     

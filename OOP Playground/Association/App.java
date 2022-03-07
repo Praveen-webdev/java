@@ -16,8 +16,7 @@ public class App {
         Vehicle vehicle3=new Vehicle("Audi",2022,driver1);
         Vehicle vehicle4=new Vehicle("Jaguar",2021,driver1);
         vehicle1.status();
-        vehicle2.status();
-        vehicle3.status();
-        vehicle4.status();
+        driver1.drive(vehicle1);
+        driver1.stop(vehicle4);
     }
 }
