@@ -52,7 +52,7 @@ public class LinkedList {
          }else {
              Node current =head;
              int index=1;
-             while(index<=location){
+             while(index<=location-1){
                  current=current.next;
                  index++;
              }
