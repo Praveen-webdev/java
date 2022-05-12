@@ -84,6 +84,21 @@ public class Patterns {
             }
             System.out.println();
         }
+        //int row =5;
+    //for(int i=1;i<=row;i++){
+     // for(int j=row-i;j>=1;j--){
+     //   System.out.print("-");
+    //  }
+      //for(int j=1;j<=i+(i-1);j++){
+      //  System.out.print("*");
+  //    }
+    //  System.out.println();
+  //  }
+//----*
+//---***
+//--*****
+//-*******
+//*********
     }
 
     private static void reversePyramid(int n) {
