@@ -1,13 +1,12 @@
-package Algo.LInkedList;
+package Algo.Queue;
 
 
 public class Node {
     int value;
     Node next;
-    Node prev;
 
     public Node(int x) {
         value = x;
-        next = prev = null;
+        next = null;
     }
 }

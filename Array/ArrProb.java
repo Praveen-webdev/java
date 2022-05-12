@@ -5,9 +5,42 @@ import java.util.Arrays;
 
 public class ArrProb {
   public static void main(String[] args) {
-    int[][] mat = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
-    // System.out.println(Arrays.deepToString(matrixRotation(mat)));
-    System.out.println(spiralMatrix(mat));
+    int arr[][]={{5,4,3,2,1},{2,3,6,7,1},{7,8,9,6,9},{8,7,6,5,4}};
+    spiral(arr);
+  }
+
+  private static void findExtraElement(int arr1[], int arr2[]) {
+    boolean foundOnArr1 = false;
+    for (int i = 0; i < arr1.length; i++) {
+      boolean isFound = false;
+      for (int j = 0; j < arr2.length; j++) {
+        if (arr1[i] == arr2[j]) {
+          isFound = true;
+          break;
+        }
+      }
+      if (!isFound) {
+        System.out.println("Extra element " + arr1[i] + " found at " + i + " on Array1");
+        foundOnArr1 = true;
+        break;
+      }
+    }
+    if (!foundOnArr1) {
+      for (int i = 0; i < arr2.length; i++) {
+        boolean isFound = false;
+        for (int j = 0; j < arr1.length; j++) {
+          if (arr1[i] == arr2[j]) {
+            isFound = true;
+            break;
+          }
+        }
+        if (!isFound) {
+          System.out.println("Extra element " + arr2[i] + " found at " + i + " on Array2");
+          foundOnArr1 = true;
+          break;
+        }
+      }
+    }
   }
 
   private static int[][] matrixRotation(int[][] matrix) {
@@ -70,7 +103,25 @@ public class ArrProb {
     }
     return list.toString();
   }
-
+  private static void spiral(int[][] arr){
+    int n=arr.length;
+    int m=arr[0].length;
+    for(int i=0;i<n/2;i++){
+      for(int j=i;j<m-i;j++){
+        System.out.print(arr[i][j]);
+      }
+      for(int j=i+1;j<n-1-i;j++){
+        System.out.print(arr[j][m-1-i]);
+      }
+      for(int j=m-1-i;j>0;j--){
+        System.out.print(arr[n-1-i][j]);
+      }
+      for(int j=n-1-i;j>=i+1;j--){
+        System.out.print(arr[j][i]);
+      }
+      System.out.println();
+    }
+  }
   private static boolean isUnique(int[] arr) {
     for (int i = 0; i < arr.length; i++) {
       for (int j = i + 1; j < arr.length; j++) {

@@ -1,7 +1,7 @@
 
 public class SumOddRange {
     public static void main(String[] args) {
-        System.out.println(sumOdd(1, 5));
+        System.out.println(sumOdds(1, 5));
     }
 
     public static boolean isOdd(int number) {
@@ -23,5 +23,18 @@ public class SumOddRange {
             return sum;
         } else
             return -1;
+    }
+
+    public static int sumOdds(int s, int e) {
+        int sum = 0;
+        while (s <= e) {
+            if (s % 2 != 0) {
+                sum += s;
+                s += 2;
+            } else {
+                s++;
+            }
+        }
+        return sum;
     }
 }

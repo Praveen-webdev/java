@@ -8,7 +8,6 @@ public class Sparrow extends Bird implements Flyable{
         System.out.println(name+" is flying...");        
     }
 
-    @Override
     public void consume() {
         System.out.println("feeding worms");
     }
