@@ -1,5 +1,5 @@
 package Array;
-
+import java.util.*;
 public class Array {
     public static void main(String[] args) {
         // * Declaring array
@@ -58,6 +58,11 @@ public class Array {
 
         // print2dArray(arr);
         find(arr, 89);
+        //? Array to ArrayList
+        int [] ar={3,45,6,2,3};
+        toList(ar);
+        
+        
     }
 
     private static void print2dArray(int[][] arr) {
@@ -79,5 +84,13 @@ public class Array {
             }
         }
         System.out.println("Not found");
+    }
+    //* Array to ArrayList
+    private static void toList(int[] arr){
+        List<Integer> ls=new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+        System.out.println(ls);
+        ls.remove(0);
+        
+        System.out.println(ls.size());
     }
 }

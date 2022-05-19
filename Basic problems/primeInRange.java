@@ -25,7 +25,7 @@ public class primeInRange {
         if (n % 2 == 0) {
             return false;
         }
-        for (int i = 2; i <= (int) Math.sqrt(n); i++) {
+        for (int i = 3; i <= (int) Math.sqrt(n); i++) { //! (int i=3;i*i<=n;i++)
             if (n % i == 0) {
                 return false;
             }
