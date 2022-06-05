@@ -1,3 +1,4 @@
+package dark.basic;
 
 public class PaintJob {
     public static void main(String[] args) {

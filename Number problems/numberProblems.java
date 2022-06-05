@@ -1,3 +1,4 @@
+
 public class numberProblems {
     public static void main(String[] args) {
         System.out.println(isAutoMorphic(25));

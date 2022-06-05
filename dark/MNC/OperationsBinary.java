@@ -1,3 +1,5 @@
+package dark.MNC;
+
 public class OperationsBinary {
     public static void main(String[] args) {
         System.out.println(binaryOperations("1a0b1b0c0c1"));

@@ -1,3 +1,5 @@
+package dark.basic;
+
 import java.util.Scanner;
 
 class InputCalculator {

@@ -1,3 +1,5 @@
+package dark.basic;
+
 public class multipleTable {
     public static void main(String[] args) {
         int row = Integer.parseInt(args[0]);
@@ -16,10 +18,10 @@ public class multipleTable {
         // }
         for (int sda[] : table) {
             for (int prod : sda) {
-                System.out.print(prod+"\t");
+                System.out.print(prod + "\t");
             }
             System.out.println();
         }
-        
+
     }
 }

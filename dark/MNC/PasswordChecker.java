@@ -1,3 +1,5 @@
+package dark.MNC;
+
 class passwordChecker {
     public static void main(String[] args) {
         String st = "4Ac8";

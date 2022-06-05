@@ -1,3 +1,5 @@
+package dark.MNC;
+
 public class DecimaltoNbase {
     public static void main(String[] args) {
         System.out.println(deciToNbase(5678, 21));

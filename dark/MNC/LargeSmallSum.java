@@ -1,10 +1,13 @@
+package dark.MNC;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class LargeSmallSum {
     public static void main(String[] args) {
-        int arr[] = { 3, 2, 1, 7, 5, 4 };
-        System.out.println(largeSmallSum(arr, arr.length));
+        System.out.println("Run check");
+        // int arr[] = { 3, 2, 1, 7, 5, 4 };
+        // System.out.println(largeSmallSum(arr, arr.length));
     }
 
     private static int largeSmallSum(int[] arr, int length) {

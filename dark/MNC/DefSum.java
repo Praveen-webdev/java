@@ -1,3 +1,5 @@
+package dark.MNC;
+
 import java.util.Scanner;
 
 public class DefSum {

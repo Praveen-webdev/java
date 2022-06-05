@@ -1,3 +1,5 @@
+package dark.MNC;
+
 public class MoveHyphen {
     public static void main(String[] args) {
         System.out.println(moveHyphen("Move-Hyphens-to-front"));
