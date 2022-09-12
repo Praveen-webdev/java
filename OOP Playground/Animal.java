@@ -4,7 +4,8 @@ public class Animal {
     int weight;
     boolean isSleeping;
     boolean isEating;
-    
+    boolean isHealthy;
+
     public Animal(int ageOld, String gender, int weight, boolean isSleeping, boolean isEating) {
         // Assgning given attribute to this object
         this.age = ageOld; // ! monkey.ages=age(given attribute)

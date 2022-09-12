@@ -10,7 +10,21 @@ public class MyString { // ! naming as public class String will give error since
     // System.out.println(stringPalindrome("123321")) ;
     // mutableString();
     // System.out.println(last2("xaxxaxaxx"));
-    System.out.println(runLengthDecode("a5"));
+    System.out.println(decode("4B3A2D1C2B"));
+    // permutations("ABC");
+  }
+
+  private static void permutations(String str) {
+    int len = str.length();
+    StringBuilder s = new StringBuilder(str);
+    for (int i = 0; i < len; i++) {
+      for (int j = len - 1; j > 0; j--) {
+        char temp = s.charAt(j);
+        s.setCharAt(j, s.charAt(j - 1));
+        s.setCharAt(j - 1, temp);
+        System.out.println(s);
+      }
+    }
   }
 
   private static String runLengthEncode(String str) {
@@ -34,27 +48,21 @@ public class MyString { // ! naming as public class String will give error since
     return sb.toString();
   }
 
-  private static String runLengthDecode(String str) {
-    int i = 1, count = 0;
-    char c = str.charAt(0);
-    StringBuffer sb = new StringBuffer();
-    while (i < str.length()) {
+  private static String decode(String str) {
+    StringBuffer bf = new StringBuffer();
+    int count = 0;
+    for (int i = 0; i < str.length(); i++) {
       char current = str.charAt(i);
-      if (current >= 48 && current <= 57) {
-        count = count * 10 + (int) current - 48;
+      if (current <= '9' && current >= '1') {
+        count = current - 48;
+        System.out.println(current);
       } else {
-        for (int k = 1; k <= count; k++) {
-          sb.append(c);
+        for (int j = 0; j < count; j++) {
+          bf.append(current);
         }
-        c = current;
-        count = 0;
       }
-      i++; 
     }
-    for (int k = 1; k <= count; k++) { // to add last decode
-      sb.append(c);
-    }
-    return sb.toString();
+    return bf.toString();
   }
 
   private static void allSubstring(String str) {

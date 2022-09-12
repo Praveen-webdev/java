@@ -1,11 +1,11 @@
 
 public class Patterns {
     public static void main(String[] args) {
-        // sandGlass(13);
+        sandGlass(15);
         // pyramid(6);
         // diamond(9);
         // numPyramid(5);
-        pascal(13);
+        // pascal(13);
         // butterfly(11);
     }
 
@@ -84,21 +84,21 @@ public class Patterns {
             }
             System.out.println();
         }
-        //int row =5;
-    //for(int i=1;i<=row;i++){
-     // for(int j=row-i;j>=1;j--){
-     //   System.out.print("-");
-    //  }
-      //for(int j=1;j<=i+(i-1);j++){
-      //  System.out.print("*");
-  //    }
-    //  System.out.println();
-  //  }
-//----*
-//---***
-//--*****
-//-*******
-//*********
+        // int row =5;
+        // for(int i=1;i<=row;i++){
+        // for(int j=row-i;j>=1;j--){
+        // System.out.print("-");
+        // }
+        // for(int j=1;j<=i+(i-1);j++){
+        // System.out.print("*");
+        // }
+        // System.out.println();
+        // }
+        // ----*
+        // ---***
+        // --*****
+        // -*******
+        // *********
     }
 
     private static void reversePyramid(int n) {
@@ -229,6 +229,17 @@ public class Patterns {
             }
 
         }
+        // * *
+        // ** **
+        // *** ***
+        // **** ****
+        // ***** *****
+        // ***********
+        // ***** *****
+        // **** ****
+        // *** ***
+        // ** **
+        // * *
 
     };
 

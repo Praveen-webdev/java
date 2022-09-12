@@ -119,7 +119,6 @@ public class ArrProb {
       for(int j=n-1-i;j>=i+1;j--){
         System.out.print(arr[j][i]);
       }
-      System.out.println();
     }
   }
   private static boolean isUnique(int[] arr) {

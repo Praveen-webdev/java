@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 class stringPattern {
     public static void main(String[] args) {
         // www.knowprogramming.com/c-programming/string-pattern-in-c-language/
@@ -66,7 +66,8 @@ class stringPattern {
     }
 
     private static void p5(String s) {
-        int n = 5; // taking input from user
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt(); // taking input from user
         int init = 0;
         for (int i = 1; i <= n; i++) {
             for (int j = i; j < n; j++) {

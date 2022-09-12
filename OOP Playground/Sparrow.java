@@ -4,7 +4,7 @@ public class Sparrow extends Bird implements Flyable{
         super(ageOld, gender, weight, isSleeping, isEating);
     }
 
-    public void fly() {
+    public void fly(boolean bool) {
         System.out.println(name+" is flying...");        
     }
 
