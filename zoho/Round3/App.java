@@ -48,7 +48,7 @@ public class App {
                     int id = Integer.parseInt(in.nextLine());
                     Bill newBill = new Bill();
                     Customer currentCustomer = null;
-                    currentCustomer=findCustomer(customers, id);
+                    currentCustomer = findCustomer(customers, id);
                     newBill.setCustomer(currentCustomer);
                     if (newBill.currentCustomer == null) {
                         System.out.println("Customer not found!");
@@ -77,12 +77,13 @@ public class App {
                                     }
                                     break;
                                 case 2:
-                                    if(!newBill.items.isEmpty()){
-                                    newBill.print();
-                                    currentCustomer.bills.add(newBill);
-                                    currentCustomer.billNos++;
-                                    purchase = false;
-                                    }else{
+                                    if (!newBill.items.isEmpty()) {
+                                        newBill.print();
+                                        currentCustomer.bills.add(newBill);
+                                        currentCustomer.billNos++;
+                                        Bill.id++;
+                                        purchase = false;
+                                    } else {
                                         System.out.println("Cart is empty");
                                     }
                                     break;
@@ -96,16 +97,16 @@ public class App {
                     }
                     break;
                 case 4:
-                printCustomer(customers);
-                break;
+                    printCustomer(customers);
+                    break;
                 case 5:
-                printInventory(items);
-                break;
+                    printInventory(items);
+                    break;
                 case 6:
-                System.out.println("Enter customer ID");
-                int customerId = Integer.parseInt(in.nextLine());
-                fetchBills(findCustomer(customers, customerId));
-                break;
+                    System.out.println("Enter customer ID");
+                    int customerId = Integer.parseInt(in.nextLine());
+                    fetchBills(findCustomer(customers, customerId));
+                    break;
                 default:
                     System.out.println("Enter valid input");
                     break;
@@ -113,17 +114,19 @@ public class App {
         }
         in.close();
     }
-    private static void printInventory(ArrayList<Item> items){
+
+    private static void printInventory(ArrayList<Item> items) {
         System.out.println("------Current inventory------");
-                            System.out.println("Name:\t\tID\t\tPrice:\t\tQuantity:");
-                            for (Item item : items) { // printing inventory
-                                System.out.println(
-                                        item.name + "\t\t" + item.getId() + "\t\t" + item.price + "\t\t"
-                                                + item.quantity);
-                            }
-                            System.out.println();
+        System.out.println("Name:\t\tID\t\tPrice:\t\tQuantity:");
+        for (Item item : items) { // printing inventory
+            System.out.println(
+                    item.name + "\t\t" + item.getId() + "\t\t" + item.price + "\t\t"
+                            + item.quantity);
+        }
+        System.out.println();
     }
-    private static Customer findCustomer(ArrayList<Customer> customers,int id){
+
+    private static Customer findCustomer(ArrayList<Customer> customers, int id) {
         for (Customer customer : customers) { // finding customer
             if (customer.getId() == id) {
                 return customer;
@@ -131,7 +134,8 @@ public class App {
         }
         return null;
     }
-    private static void printCustomer(ArrayList<Customer> customers){
+
+    private static void printCustomer(ArrayList<Customer> customers) {
         System.out.println("---CUSTOMERS LIST---");
         System.out.println("Name\t\t Id\t\tPhone.no\t\tNo. of bills\t\t");
         for (Customer customer : customers) { // finding customer
@@ -139,10 +143,11 @@ public class App {
         }
         System.out.println();
     }
-    private static void fetchBills(Customer customer){
-        if(customer==null){
+
+    private static void fetchBills(Customer customer) {
+        if (customer == null) {
             System.out.println("Invalid customer id");
-        }else{
+        } else {
             customer.getBills();
         }
     }
